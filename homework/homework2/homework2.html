@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework2</title>
+    <link rel="stylesheet" href="hw2.css">
+</head>
+
+<body>
+    <form action="#" method="get" enctype="application/x-www-form-urlencoded">
+        <fieldset>
+            <legend>Form Check</legend>
+            <div class="in1">
+                <label for="account" class="t1">姓名:</label>
+                <input type="text" name="name" id="name" autofocus autocomplete="off" size="15">
+                <span id="namesp"></span>
+                <p class="rm1">(1.不可空白2.至少兩個字以上3.必須全部為中文字)</p>
+            </div>
+            <div class="in1">
+                <label for="pwd" class="t1">密碼:</label>
+                <input type="password" name="pwd" id="pwd" autofocus size="15">
+                <span id="pwdsp"></span>
+                <p class="rm1">(1.不可空白2.至少6個字且必須包含英數字、特殊字元[!@#$%^&*])</p>
+            </div>
+            <div class="in1">
+                <label for="date" class="t1">日期:</label>
+                <input type="text" name="date" id="date" autofocus autocomplete="off" size="15">
+                <span id="datesp"></span>
+                <p class="rm1">格式:西元年/月/日(yyyy/mm/dd)</p>
+            </div>
+        </fieldset>
+    </form>
+    <script src="hw2.js"></script>
+</body>
+
+</html>

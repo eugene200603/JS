@@ -1,0 +1,30 @@
+table {
+    font-family: Tahoma;
+    font-size: 35px;
+    color: red;
+    border: 4px dashed blue;
+    background-color: aqua;
+    border-spacing: 0;
+    border-radius: 5px;
+    position: absolute;
+    top: 80px;
+    left: 200px;
+}
+
+td:nth-child(even) {
+    background-color: honeydew;
+}
+
+
+td {
+    border-left: 3px solid blue;
+    padding: 10px;
+}
+
+td:first-child {
+    border-left: transparent;
+}
+
+td:hover {
+    background-color: azure;
+}

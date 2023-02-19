@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>01functionMethod.html</title>
+</head>
+
+<body>
+    <script>
+        //==========定義函數==================
+        //方法一函數宣告，定義帶參數的函數
+        function fADD1(a, b) {
+            console.log(`b=${b}`);
+            return (a + b);
+        }
+
+
+
+        //==========函數呼叫==================
+        //呼叫帶參數的函數
+        console.log(`fADD1(10,20)=${fADD1(10, 20)}`);
+
+
+        //JavaScript沒有規定function的參數及呼叫function時給予的參數數量必須要一致
+        //少掉的參數為undefined，而多的參數會被忽略
+        console.log(`fADD1(10,20)=${fADD1(10)}`);
+        console.log(`fADD1(10,20,30)=${fADD1(10, 20, 30)}`);
+
+        //預設參數值(ES6)
+        function fADD2(a, b = 200) {
+            console.log(`b=${b}`);
+            return (a + b);
+        }
+        console.log(`fADD2(10)=${fADD2(10)}`);
+
+
+        //==========定義函數==================
+        //方法二暱名函數
+        let b = 10;   //10 -> number literal
+        let c = 2 + 3;
+        let fADD3 = function (a, b) {    //function literal
+            return a + b;
+        }
+        console.log(`fADD3(100,200))=${fADD3(100, 200)}`);
+
+        // IIFE (Immediately Invoked Function Expression) 是一個定義完馬上就執行的 JavaScript function (en-US)。
+        (function (a, b) {
+            console.log(a + b);
+        })(1000, 2000)   //變數宣告  程式的進入點   main
+
+
+        //==========定義函數==================
+        //方法三箭頭函數(arrow function)
+        let fADD4 = (a, b) => {
+            return a + b;
+        }
+        console.log(`fADD4(300,500))=${fADD4(300, 500)}`);
+        //函數沒有參數
+        let fADD5 = () => {
+            return 3000;
+        }
+        console.log(`fADD5()=${fADD5()}`);
+        //如果statement 只有一行，return 和 {} 可省略
+
+        let fADD6 = (a, b) => a + b;
+        console.log(`fADD6(300,1500)=${fADD6(300, 1500)}`);
+        //只有一個參數，()可省略
+        let fADD7 = a => a + 1000;
+        console.log(`fADD7(300)=${fADD7(300)}`);
+
+
+        // let fADD7 ;
+        // let fADD7 = a => a + 1000;  變數提升  hosting
+
+        /* error
+        let fADD7 ;
+        console.log(`fADD7(300)=${fADD7(300)}`);
+        let fADD7 = a => a + 1000;
+        */
+
+
+        // console.log("=============");
+        // let i = 10;  //i是變數  10 是變數的值(內容)
+        // console.log(i);
+
+        // console.log(fADD7);
+
+        // console.log(`fADD7=${fADD7}`);
+        // console.log(`fADD4=${fADD4}`);
+        // fADD7 = fADD4;
+        // console.log(`fADD7=${fADD7}`);
+        // console.log(`fADD1=${fADD1}`);
+        // fADD1 = fADD7;
+        // console.log(`fADD1=${fADD1}`);
+
+        //函數呼叫  函數名稱()   ,()-> 立即呼叫
+        //函數內容  函數名稱
+
+
+
+
+    </script>
+</body>
+
+</html>
