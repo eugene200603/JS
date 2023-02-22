@@ -6,53 +6,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homework4</title>
-    <style>
-        .pic {
-            width: 800px;
-            height: 500px;
-        }
-    </style>
+    <link rel="stylesheet" href="hw4.css">
 </head>
 
 <body>
-    <div class="box">
-        <div class="number"></div>
-        <img class="pic" src="images/1.jpg">
-        <div class="control"></div>
-    </div>
-    <div class="box">
-        <div class="number"></div>
-        <img class="pic" src="images/2.jpg">
-        <div class="control"></div>
-    </div>
-    <div class="box">
-        <div class="number"></div>
-        <img class="pic" src="images/3.jpg">
-        <div class="control"></div>
-    </div>
-    <div class="box">
-        <div class="number"></div>
-        <img class="pic" src="images/4.jpg">
-        <div class="control"></div>
-    </div>
-    <div class="box">
-        <div class="number"></div>
-        <img class="pic" src="images/5.jpg">
-        <div class="control"></div>
+    <div class="screen">
+        <div class="box">
+            <a href="https://tw.portal-pokemon.com/play/pokedex/0001">
+                <img class="pic" src="images/1.png">
+            </a>
+        </div>
+        <div class="box">
+            <a href="https://tw.portal-pokemon.com/play/pokedex/0004">
+                <img class="pic" src="images/2.png">
+            </a>
+        </div>
+        <div class="box">
+            <a href="https://tw.portal-pokemon.com/play/pokedex/0007">
+                <img class="pic" src="images/3.png">
+            </a>
+        </div>
+        <div class="box">
+            <a href="https://tw.portal-pokemon.com/play/pokedex/0025">
+                <img class="pic" src="images/4.png">
+            </a>
+        </div>
+        <div class="box">
+            <a href="https://tw.portal-pokemon.com/play/pokedex/0018">
+                <img class="pic" src="images/5.png">
+            </a>
+        </div>
+        <p class="prev" id="arrow" onclick="arrow(-1)">&#10094;</p>
+        <p class="next" id="arrow" onclick="arrow(1)">&#10095;</p>
     </div>
 
-    <div>
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
+    <div class="nums">
+        <span class="num" id="num" onclick="num(1)"></span>
+        <span class="num" id="num" onclick="num(2)"></span>
+        <span class="num" id="num" onclick="num(3)"></span>
+        <span class="num" id="num" onclick="num(4)"></span>
+        <span class="num" id="num" onclick="num(5)"></span>
+    </div>
+    <div class="control">
+        <img class="botton" id="botton" src="images/6.png">
     </div>
 
-    <div>
-        <span class="num">1</span>
-        <span class="num">2</span>
-        <span class="num">3</span>
-        <span class="num">4</span>
-        <span class="num">5</span>
-    </div>
+    <script>
+        let boxes = document.getElementsByClassName("box");
+        let index = 1;
+        document.getElementById("botton").addEventListener("click", stop);
+
+        slide(index);
+        auto();
+        console.log(boxes);
+
+        function arrow(n) {
+            index += n;
+            slide(index);
+        }
+
+        function num(n) {
+            index = n;
+            slide(index);
+
+        }
+        function slide(n) {
+            if (index <= 0) { index = boxes.length };
+            if (index > boxes.length) { index = 1 };
+            for (let i = 0; i < boxes.length; i++) {
+                boxes[i].style.display = "none";
+            }
+            boxes[index - 1].style.display = "block";
+            console.log(index);
+        }
+
+        function auto() {
+
+            let time = setInterval(() => {
+                index += 1;
+                if (index <= 0) { index = boxes.length };
+                if (index > boxes.length) { index = 1 };
+                slide(index);
+            }, 2000);
+        }
+        function stop() {
+            clearInterval(time);
+        }
+
+    </script>
 
 </body>
 
